@@ -249,4 +249,4 @@
 
 <h2 id="require">一切從需求開始</h2>
 
-//TODO
+[New issue](https://github.com/Jie2GG/Native.Csharp.Frame/issues/new)
