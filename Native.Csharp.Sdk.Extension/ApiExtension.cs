@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Native.Csharp.Sdk.Extension
 {
-    public static class ApiFactoryExtension
+    public static class ApiExtensionExtension
     {
         public static bool SendMessage(this CQGroupMessageEventArgs e, object[] message)
         {

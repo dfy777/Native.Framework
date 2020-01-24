@@ -112,7 +112,7 @@
 
 - <kbd>SDK 4</kbd> 提取群列表會因QQ參數判斷而引致酷Q爆炸 :boom:
 
-<h2 id="structure">範例結構</h3>
+<h2 id="structure">項目結構</h3>
 
 1. _<h5 id="pj_agent">Agent</h5>_
    ``Native.Csharp``項目的原型，由於核心事件處理是在[``Core``](#pj_core)項目，故以Agent命名表示其作用
@@ -154,20 +154,20 @@
      * ``CoolQModule.cs`` WCF服務調用到的模組,實現``API``公開調用
      * ``HomeModule.cs`` WCF服務調用到的模組,實現靜態網站建立
      </details>
-   * ``Request`` 
+   * ``Request`` 請求類(針對QQ API)
      * ``FriendRequest.cs`` 好友列表的擴展,提供更多資料包括分組及QQ会員等級
      * ``GroupRequest.cs`` 提供群公告讀取
      * ``Icon.cs`` 用戶頭像及群頭像下載
      * ``VipInfo.cs`` 提供用戶QQ會員資料讀取
-   * ``Require`` 
+   * ``Require`` 需求類(針對外部 API)
      * ``Hitokoto.cs`` [一言](https://hitokoto.cn/api) 一言指的就是一句話語，可以是動漫中的台詞，也可以是網絡上的各種小段子。
      * ``TraceMoe.cs`` [TraceMoe](https://soruly.github.io/trace.moe) 使用動畫番劇中的截圖找到更具體的番劇資料包括[AniList](https://anilist.co/)及[MyAnimeList](https://myanimelist.net/)的資料
-   * ``Service`` 
+   * ``Service`` 服務類
      * ``CoolQDataBase.cs`` 讀取酷Q內部存取的SQLite數據庫以取得歷史訊息進行處理分析
      * ``CoolQWebSocket.cs`` 提供正向WebSocket服務供其他應用透過``WebSocket``通信
      * ``CoolQZeroMq.cs`` 提供PubSub模式的ZeroMQ推送
      * ``Startup.cs`` WCF服務啟動項
-   * ``Common.cs`` 公用類
+   * ``Common.cs`` 公用類,實現具體API,Log及服務的定義
    * ``Event_App.cs`` 酷Q啟用/停用及初始化與結束
    * ``Event_Friend.cs`` 好友事件
    * ``Event_Group.cs`` 群組事件
@@ -198,9 +198,9 @@
      * ``ViewModel.cs``生產模式下的實作模型
      </details>
 5. _<h5 id="pj_extension">Native.Csharp.Sdk.Extension</h5>_
-   * ``ApiFactory.cs`` 實作對事件接口的優化
-   
-<h3 id="achievement">具體實現</h3>
+   * ``ApiExtention.cs`` 實作對事件接口的優化
+
+<h2 id="achievement">具體實現</h2>
 
 **調用QQ API** 
 - [x] 好友列表
@@ -249,4 +249,21 @@
 
 <h2 id="require">一切從需求開始</h2>
 
-//TODO
+[New issue](https://github.com/Jie2GG/Native.Csharp.Frame/issues/new)
+
+###### Q:怎樣發送圖片?
+
+**A:** 需要酷Q<kbd>Pro</kbd>版本以及圖片必須在 ``CoolQ\data\image`` 以下 (可加入文件夾)
+
+假設你有將圖片放在 ``CoolQ\data\image`` 下,例如命名為 ``Jie2GG.jpg``
+
+```cs
+public void GroupMessage(object sender, CQGroupMessageEventArgs e)
+{
+   if(e.CQApi.IsAllowSendImage) //判斷可否發送圖片(需要酷Q Pro版本)
+   {
+      e.CQApi.SendGroupMessage(e.FromGroup,CQApi.CQCode_Image("Jie2GG.jpg"),"(秘)");
+   }
+}
+
+```
