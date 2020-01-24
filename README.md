@@ -242,7 +242,7 @@
 - [x] 使用其定時觸發實現定時事件
 
 **SQLite 酷Q日誌存取,數據存取**
-- [x] 讀取酷Q事件日誌中的信息ID撤回信息
+- [x] 讀取酷Q事件日誌中的訊息ID撤回信息
 
 **Tool.IniObject**
 - [x] UI設置讀寫
@@ -253,16 +253,16 @@
 
 ###### Q:怎樣發送圖片?
 
-**A:** 需要酷Q<kbd>Pro</kbd>版本以及圖片必須在 ``CoolQ\data\image`` 以下 (可加入文件夾)
+**A:** 需要酷Q<kbd>Pro</kbd>版本以及圖片必須在酷Q的圖片文件夾下 ``CoolQ\data\image`` (支持下層文件夾)
 
-假設你有將圖片放在 ``CoolQ\data\image`` 下,例如命名為 ``Jie2GG.jpg``
+假設你有將圖片放在 ``CoolQ\data\image\com.jie2gg.mylove`` 下,例如命名為 ``Jie2GG.jpg``
 
 ```cs
 public void GroupMessage(object sender, CQGroupMessageEventArgs e)
 {
    if(e.CQApi.IsAllowSendImage) //判斷可否發送圖片(需要酷Q Pro版本)
    {
-      e.CQApi.SendGroupMessage(e.FromGroup,CQApi.CQCode_Image("Jie2GG.jpg"),"(秘)");
+      e.CQApi.SendGroupMessage(e.FromGroup,CQApi.CQCode_Image("com.jie2gg.mylove\Jie2GG.jpg"),"(秘)");
    }
 }
 
