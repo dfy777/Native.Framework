@@ -157,14 +157,14 @@ jobs:
     needs: [buildExample , coolq_win]
     runs-on: ubuntu-16.04
     steps:
-      - name: Create commit comment
+      - name: Create commit comment 
         uses: peter-evans/commit-comment@v1
         if: always()
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             SHA:${{github.sha}}
-            本次GithubAction ``${{github.workflow}}``已經跑完囉~
+            本次${{github.workflow}}已經跑完囉~
             [查看運行日誌][1]
             ##最新版本資料 *固定是讀取最新結果的文件喔!
             [所有相關文件壓縮包][2]
