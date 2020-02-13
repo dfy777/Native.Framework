@@ -122,6 +122,7 @@ jobs:
         timeout-minutes: 10
         run: |
           Start-Process C:\ffmpeg\ffmpeg-4.2.2-win64-shared\bin\ffmpeg.exe -ArgumentList "-f gdigrab","-i desktop","-framerate 25","C:\coolq\screen.mkv";
+          Start-Process C:\ffmpeg\ffmpeg-4.2.2-win64-shared\bin\ffmpeg.exe -ArgumentList "-f gdigrab","-i desktop","-framerate 15","C:\coolq\screen.gif";
           Start-Process "$Env:GITHUB_WORKSPACE\Tool\CoolQAutomation.exe"  -ArgumentList "${{secrets.TENCENT_QQID}}","${{secrets.TENCENT_QQPASSWORD}}"
           Start-Process C:\LocalEmulator\Locale.Emulator.2.4.1.0\LEInstaller.exe
           [System.Threading.SpinWait]::SpinUntil([Func[boolean]]{ (Get-Process | Where-Object { $_.ProcessName -eq "LEInstaller" } | Select -ExpandProperty "ProcessName") -eq "LEInstaller" }, 5000)
@@ -147,20 +148,22 @@ jobs:
         with:
           name: CPK
           path: C:\CoolQ\*.cpk
-      - name: Upload screenRecord
+      - name: Upload screenRecord-mkv
         if: always()
         uses: actions/upload-artifact@v1
         with:
           name: Screen
           path: C:\coolq\screen.mkv
+      - name: Upload screenRecord-gif
+        if: always()
+        uses: actions/upload-artifact@v1
+        with:
+          name: ScreenGif
+          path: C:\coolq\screen.gif
   pull:
     needs: [buildExample , coolq_win]
     runs-on: ubuntu-16.04
     steps:
-      - name: Download
-        uses: actions/download-artifact@v1
-        with:
-          name: CoolQ
       - name: Create commit comment
         uses: peter-evans/commit-comment@v1
         with:
@@ -170,15 +173,3 @@ jobs:
             ![Gif](https://r_gif.kotone.workers.dev)
             [所有文件](https://r_coolq.kotone.workers.dev)
             [錄影](https://r_screen.kotone.workers.dev)
-  coolq_linux:
-    needs: [buildExample , coolq_win]
-    if: success()
-    runs-on: ubuntu-16.04
-    steps:
-      - name: Download
-        uses: actions/download-artifact@v1
-        with:
-          name: CoolQ
-      - name: Docker
-        run: docker run -d --name=coolq--rm -p 9000:9000 -v $GITHUB_WORKSPACE\CoolQ\CoolQ_Air:/home/user/coolq -e VNC_PASSWD=rcnbnb mercujerry/wine-coolq-dotnet
-
