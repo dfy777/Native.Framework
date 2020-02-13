@@ -169,7 +169,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            釋放新版本Example囉~
+            釋放新版本Example過程囉~
             ![Gif](https://r_gif.kotone.workers.dev)
-            [所有文件](https://r_coolq.kotone.workers.dev)
-            [錄影](https://r_screen.kotone.workers.dev)
+            [所有文件壓縮包](https://r_coolq.kotone.workers.dev)
+            [登入及打包錄影](https://r_screen.kotone.workers.dev)
