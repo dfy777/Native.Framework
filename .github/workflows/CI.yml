@@ -163,11 +163,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            SHA:${process.env.GITHUB_SHA}
-            Id:${process.env.GITHUB_ACTION},REPOSITORY:${process.env.GITHUB_REPOSITORY}/${process.env.GITHUB_REF}
+            SHA:${{GITHUB_SHA}}
+            Id:${{GITHUB_ACTION}},REPOSITORY:${{GITHUB_REPOSITORY}}/${{GITHUB_REF}}
             $(process.env.GITHUB_EVENT_NAME)
-            本次測試 ``GithubAction - `${process.env.GITHUB_WORKFLOW}`已經跑完囉~
-            [查看運行日誌](https://github.com/Jie2GG/Native.Framework/actions/runs/${process.env.GITHUB_RUN_ID})
+            本次測試 ``GithubAction - `${{GITHUB_WORKFLOW}}`已經跑完囉~
+            [查看運行日誌](https://github.com/Jie2GG/Native.Framework/actions/runs/${{GITHUB_RUN_ID}})
             ##最新版本資料(固定是讀取最新結果的文件喔!)
             [所有相關文件壓縮包](https://r_coolq.kotone.workers.dev)
             [登入及打包的錄影影片](https://r_screen.kotone.workers.dev)
