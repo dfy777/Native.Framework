@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.28803.156
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "native.csharp.demo", "Agent\native.csharp.demo.csproj", "{8BC2C861-D30C-425B-98A7-812792D2017D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "native.csharp.demo", "Core\native.csharp.demo.csproj", "{8BC2C861-D30C-425B-98A7-812792D2017D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{E93AE621-C1A4-4BFB-A73C-83A880D6BBFB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code", "Code\Code.csproj", "{E93AE621-C1A4-4BFB-A73C-83A880D6BBFB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{9B25746E-2720-4F5C-9359-0A7397E3EB2E}"
 EndProject

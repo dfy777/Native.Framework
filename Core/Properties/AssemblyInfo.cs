@@ -2,35 +2,35 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-// 組件的一般資訊是由下列的屬性集控制。
-// 變更這些屬性的值即可修改組件的相關
-// 資訊。
-[assembly: AssemblyTitle("native.csharp.demo")]
+// 有关程序集的一般信息由以下
+// 控制。更改这些特性值可修改
+// 与程序集关联的信息。
+[assembly: AssemblyTitle("Native.Csharp.Sdk")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("native.csharp.demo")]
-[assembly: AssemblyCopyright("Copyright ©  2020")]
+[assembly: AssemblyProduct("Native.Csharp.Sdk")]
+[assembly: AssemblyCopyright("Copyright © Jie2GG 2018 . GitHub: https://github.com/Jie2GG/Native")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-// 將 ComVisible 設為 false 可對 COM 元件隱藏
-// 組件中的類型。若必須從 COM 存取此組件中的類型，
-// 的類型，請在該類型上將 ComVisible 屬性設定為 true。
+// 将 ComVisible 设置为 false 会使此程序集中的类型
+//对 COM 组件不可见。如果需要从 COM 访问此程序集中的类型
+//请将此类型的 ComVisible 特性设置为 true。
 [assembly: ComVisible(false)]
 
-// 下列 GUID 為專案公開 (Expose) 至 COM 時所要使用的 typelib ID
-[assembly: Guid("e93ae621-c1a4-4bfb-a73c-83a880d6bbfb")]
+// 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
+[assembly: Guid("8bc2c861-d30c-425b-98a7-812792d2017d")]
 
-// 組件的版本資訊由下列四個值所組成: 
+// 程序集的版本信息由下列四个值组成: 
 //
-//      主要版本
-//      次要版本
-//      組建編號
-//      修訂編號
+//      主版本
+//      次版本
+//      生成号
+//      修订号
 //
-// 您可以指定所有的值，也可以使用 '*' 將組建和修訂編號
-// 設為預設，如下所示:
+// 可以指定所有值，也可以使用以下所示的 "*" 预置版本号和修订号
+//通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion ("4.0.0.0105")]
+[assembly: AssemblyFileVersion ("4.0.0.0105")]

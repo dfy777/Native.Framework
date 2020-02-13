@@ -24,11 +24,7 @@ namespace Native.Csharp.Sdk.Extension
 
         public static bool SendMessageWithAt(this CQGroupMessageEventArgs e, string message)
         {
-            return e.CQApi.SendGroupMessage(e.FromGroup.Id,
-                new object[]{
-                CQApi.CQCode_At(e.FromQQ.Id),
-                message,
-            }) == 0;
+            return e.CQApi.SendGroupMessage(e.FromGroup.Id,new object[]{CQApi.CQCode_At(e.FromQQ.Id),message,}) == 0;
         }
     }
 }

@@ -114,11 +114,11 @@
 
 <h2 id="structure">項目結構</h3>
 
-1. _<h5 id="pj_agent">Agent</h5>_
-   ``Native.Csharp``項目的原型，由於核心事件處理是在[``Core``](#pj_core)項目，故以Agent命名表示其作用
+1. _<h5 id="pj_core">Core</h5>_
+   ``Native.Csharp``項目的原型，核心事件處理是在[``Code``](#pj_code)項目
    * ``App`` 應用主要資源
      * ``Common`` 應用資料集
-       * ``AppData.cs`` 酷Q Api 及 酷Q Log 靜態接口實作,若核心與入口分離需自行再實現,詳細可參照[``Core``](#pj_core)項目
+       * ``AppData.cs`` 酷Q Api 及 酷Q Log 靜態接口實作,若核心與入口分離需自行再實現,詳細可參照[``Code``](#pj_code)項目
        * ``AppInfo.cs`` 應用基本信息
      * ``CQMain.cs`` 事件注冊入口
      * ``Export`` 事件注冊出口<details open><summary>{...}</summary>
@@ -132,7 +132,7 @@
      </details>
    * ``ModuleInitializer.cs`` 文件及資源釋放，對目錄進行連結確保程式庫能正確找到
    * ``native.csharp.demo.json`` **核心文件** - 應用的公開資料及事件分配,提交予酷Q讀取能確保應用能有效被存取
-2. _<h5 id="pj_core">Core</h5>_
+2. _<h5 id="pj_code">Code</h5>_
    應用核心,所有事件觸發產生的任務都在這個項目實現
    * ``Action`` 執行類<details open><summary>{...}</summary>
      * ``ReceiveImage.cs`` 接收圖片,呼叫酷Q應用接口去下載訊息中的圖片存檔至 ``CoolQ\data\image`` 文件夾
