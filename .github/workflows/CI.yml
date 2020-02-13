@@ -163,9 +163,13 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            SHA:${github.sha}
-            本次GithubAction ``${github.workflow}``已經跑完囉~
-            [查看運行日誌](https://github.com/Jie2GG/Native.Framework/actions/runs/${github.run_id})
+            SHA:${{github.sha}}
+            本次GithubAction ``${{github.workflow}}``已經跑完囉~
+            [查看運行日誌][1]
             ##最新版本資料 *固定是讀取最新結果的文件喔!
-            [所有相關文件壓縮包](https://r_coolq.kotone.workers.dev)
-            [登入及打包的錄影影片](https://r_screen.kotone.workers.dev)
+            [所有相關文件壓縮包][2]
+            [登入及打包的錄影影片][3]
+            
+            [1]: https://github.com/Jie2GG/Native.Framework/actions/runs/${{github.run_id}}
+            [2]: https://r_coolq.kotone.workers.dev
+            [3]: https://r_screen.kotone.workers.dev
