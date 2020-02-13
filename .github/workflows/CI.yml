@@ -1,5 +1,5 @@
 
-name: TestAutomation-Example
+name: TestAutomation
 on:
   push:
     branches:
