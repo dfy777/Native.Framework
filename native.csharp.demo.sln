@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{9B25
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{B9E15A1A-EFB3-49A4-8100-943C8A567B8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Native.Sdk.Extension", "Native.Csharp.Sdk.Extension\Native.Sdk.Extension.csproj", "{640DBD0F-8411-4587-A743-0A2B653F5891}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Native.Sdk.Extension", "Native.Sdk.Extension\Native.Sdk.Extension.csproj", "{640DBD0F-8411-4587-A743-0A2B653F5891}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
