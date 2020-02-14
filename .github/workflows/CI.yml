@@ -163,7 +163,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           body: |
-            ## 狀況滙報
+            ## 狀況匯報
             
             SHA:${{github.sha}}
             本次${{github.workflow}}已經跑完囉~
