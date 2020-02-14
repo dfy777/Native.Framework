@@ -119,7 +119,7 @@
       <Project>{b9e15a1a-efb3-49a4-8100-943c8a567b8b}</Project>
       <Name>Database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Native.Csharp.Sdk.Extension\Native.Sdk.Extension.csproj">
+    <ProjectReference Include="..\Native.Sdk.Extension\Native.Sdk.Extension.csproj">
       <Project>{640dbd0f-8411-4587-a743-0a2b653f5891}</Project>
       <Name>Native.Sdk.Extension</Name>
     </ProjectReference>
