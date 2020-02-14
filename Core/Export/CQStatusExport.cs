@@ -4,34 +4,26 @@
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using Native.Csharp.Sdk.Cqp;
-using Native.Csharp.App.Common;
-using Native.Csharp.Sdk.Cqp.EventArgs;
-using Native.Csharp.Sdk.Cqp.Interface;
-using Native.Csharp.Sdk.Cqp.Model;
+using Native.Core.Domain;
+using Native.Sdk.Cqp;
+using Native.Sdk.Cqp.EventArgs;
+using Native.Sdk.Cqp.Interface;
+using Native.Sdk.Cqp.Model;
 using Unity;
 
-namespace Native.Csharp.App.Export
+namespace Native.App.Export
 {
 	/// <summary>	
 	/// 表示酷Q状态导出的类	
 	/// </summary>	
 	public class CQStatusExport	
 	{	
-		#region --字段--	
-		private static CQApi api = null;	
-		private static CQLog log = null;	
-		#endregion	
-		
 		#region --构造函数--	
 		/// <summary>	
 		/// 由托管环境初始化的 <see cref="CQStatusExport"/> 的新实例	
 		/// </summary>	
 		static CQStatusExport ()	
 		{	
-			api = AppInfo.UnityContainer.Resolve<CQApi> (AppInfo.Id);	
-			log = AppInfo.UnityContainer.Resolve<CQLog> (AppInfo.Id);	
-			
 			// 调用方法进行实例化	
 			ResolveBackcall ();	
 		}	
@@ -50,9 +42,9 @@ namespace Native.Csharp.App.Export
 			 * Function: _statusUptime	
 			 * Period: 1000	
 			 */	
-			if (Common.AppInfo.UnityContainer.IsRegistered<IStatusUpdate> ("新加好友累计"))	
+			if (AppData.UnityContainer.IsRegistered<IStatusUpdate> ("新加好友累计"))	
 			{	
-				Status_statusUptimeHandler += Common.AppInfo.UnityContainer.Resolve<IStatusUpdate> ("新加好友累计").StatusUpdate;	
+				Status_statusUptimeHandler += AppData.UnityContainer.Resolve<IStatusUpdate> ("新加好友累计").StatusUpdate;	
 			}	
 			
 		}	
@@ -70,7 +62,7 @@ namespace Native.Csharp.App.Export
 		[DllExport (ExportName = "_statusUptime", CallingConvention = CallingConvention.StdCall)]	
 		public static string Status_statusUptime ()	
 		{	
-			CQStatusUpdateEventArgs args = new CQStatusUpdateEventArgs (api, log, 1, "新加好友累计", "UPTIME", "_statusUptime", 1000);	
+			CQStatusUpdateEventArgs args = new CQStatusUpdateEventArgs (AppData.CQApi, AppData.CQLog, 1, "新加好友累计", "UPTIME", "_statusUptime", 1000);	
 			if (Status_statusUptimeHandler != null)	
 			{	
 				return Status_statusUptimeHandler (typeof (CQStatusExport), args).ToSendString ();	

@@ -4,32 +4,25 @@
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using Native.Csharp.Sdk.Cqp;
-using Native.Csharp.App.Common;
-using Native.Csharp.Sdk.Cqp.EventArgs;
-using Native.Csharp.Sdk.Cqp.Interface;
+using Native.Core.Domain;
+using Native.Sdk.Cqp;
+using Native.Sdk.Cqp.EventArgs;
+using Native.Sdk.Cqp.Interface;
 using Unity;
 
-namespace Native.Csharp.App.Export
+namespace Native.App.Export
 {
 	/// <summary>	
 	/// 表示酷Q菜单导出的类	
 	/// </summary>	
 	public class CQMenuExport	
 	{	
-		#region --字段--	
-		private static CQApi api = null;	
-		private static CQLog log = null;	
-		#endregion	
-		
 		#region --构造函数--	
 		/// <summary>	
 		/// 由托管环境初始化的 <see cref="CQMenuExport"/> 的新实例	
 		/// </summary>	
 		static CQMenuExport ()	
 		{	
-			api = AppInfo.UnityContainer.Resolve<CQApi> (AppInfo.Id);	
-			log = AppInfo.UnityContainer.Resolve<CQLog> (AppInfo.Id);	
 			
 			// 调用方法进行实例化	
 			ResolveBackcall ();	
@@ -46,18 +39,18 @@ namespace Native.Csharp.App.Export
 			 * Name: 醋Q聊天窗	
 			 * Function: _menuA	
 			 */	
-			if (Common.AppInfo.UnityContainer.IsRegistered<IMenuCall> ("醋Q聊天窗"))	
+			if (AppData.UnityContainer.IsRegistered<IMenuCall> ("醋Q聊天窗"))	
 			{	
-				Menu_menuAHandler += Common.AppInfo.UnityContainer.Resolve<IMenuCall> ("醋Q聊天窗").MenuCall;	
+				Menu_menuAHandler += AppData.UnityContainer.Resolve<IMenuCall> ("醋Q聊天窗").MenuCall;	
 			}	
 			
 			/*	
 			 * Name: WinForm	
 			 * Function: _menuB	
 			 */	
-			if (Common.AppInfo.UnityContainer.IsRegistered<IMenuCall> ("WinForm"))	
+			if (AppData.UnityContainer.IsRegistered<IMenuCall> ("WinForm"))	
 			{	
-				Menu_menuBHandler += Common.AppInfo.UnityContainer.Resolve<IMenuCall> ("WinForm").MenuCall;	
+				Menu_menuBHandler += AppData.UnityContainer.Resolve<IMenuCall> ("WinForm").MenuCall;	
 			}	
 			
 		}	
@@ -74,7 +67,7 @@ namespace Native.Csharp.App.Export
 		{	
 			if (Menu_menuAHandler != null)	
 			{	
-				CQMenuCallEventArgs args = new CQMenuCallEventArgs (api, log, "醋Q聊天窗", "_menuA");	
+				CQMenuCallEventArgs args = new CQMenuCallEventArgs (AppData.CQApi, AppData.CQLog, "醋Q聊天窗", "_menuA");	
 				Menu_menuAHandler (typeof (CQMenuExport), args);	
 			}	
 			return 0;	
@@ -90,7 +83,7 @@ namespace Native.Csharp.App.Export
 		{	
 			if (Menu_menuBHandler != null)	
 			{	
-				CQMenuCallEventArgs args = new CQMenuCallEventArgs (api, log, "WinForm", "_menuB");	
+				CQMenuCallEventArgs args = new CQMenuCallEventArgs (AppData.CQApi, AppData.CQLog, "WinForm", "_menuB");	
 				Menu_menuBHandler (typeof (CQMenuExport), args);	
 			}	
 			return 0;	

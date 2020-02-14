@@ -7,7 +7,7 @@ using Unity;
 using Native.Csharp.Sdk.Cqp.Interface;
 using Code;
 
-namespace Native.Csharp.App
+namespace Native.Core
 {
 	/// <summary>
 	/// 酷Q应用主入口类
