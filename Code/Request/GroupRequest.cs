@@ -1,5 +1,5 @@
 ﻿using Code.Model;
-using Native.Csharp.Sdk.Cqp;
+using Native.Sdk.Cqp;
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using System;

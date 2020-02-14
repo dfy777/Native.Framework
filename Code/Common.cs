@@ -1,7 +1,7 @@
 ﻿using Code.Request;
 using Code.Require;
 using Code.Service;
-using Native.Csharp.Sdk.Cqp;
+using Native.Sdk.Cqp;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -6,8 +6,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Database;
-using Native.Csharp.Sdk.Cqp;
-using Native.Csharp.Sdk.Cqp.Model;
+using Native.Sdk.Cqp;
+using Native.Sdk.Cqp.Model;
 using SQLite;
 
 namespace Code.Service

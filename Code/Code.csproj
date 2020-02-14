@@ -43,11 +43,11 @@
     <Reference Include="Nancy.Hosting.Wcf, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Nancy.Hosting.Wcf.1.4.1\lib\net40\Nancy.Hosting.Wcf.dll</HintPath>
     </Reference>
-    <Reference Include="Native.Csharp.Sdk, Version=2.7.11.121, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\Native.Csharp.Sdk.2.7.11.121\lib\net45\Native.Csharp.Sdk.dll</HintPath>
+    <Reference Include="Native.Sdk, Version=2.8.0.211, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Native.Sdk.2.8.0.211\lib\net45\Native.Sdk.dll</HintPath>
     </Reference>
-    <Reference Include="Native.Csharp.Tool, Version=3.0.8.106, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\Native.Csharp.Tool.3.0.8.106\lib\net45\Native.Csharp.Tool.dll</HintPath>
+    <Reference Include="Native.Tool, Version=3.1.0.211, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\Native.Tool.3.1.0.211\lib\net45\Native.Tool.dll</HintPath>
     </Reference>
     <Reference Include="NetMQ, Version=4.0.0.207, Culture=neutral, PublicKeyToken=a6decef4ddc58b3a, processorArchitecture=MSIL">
       <HintPath>..\packages\NetMQ.4.0.0.207\lib\net40\NetMQ.dll</HintPath>
@@ -119,9 +119,9 @@
       <Project>{b9e15a1a-efb3-49a4-8100-943c8a567b8b}</Project>
       <Name>Database</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Native.Csharp.Sdk.Extension\Native.Csharp.Sdk.Extension.csproj">
+    <ProjectReference Include="..\Native.Csharp.Sdk.Extension\Native.Sdk.Extension.csproj">
       <Project>{640dbd0f-8411-4587-a743-0a2b653f5891}</Project>
-      <Name>Native.Csharp.Sdk.Extension</Name>
+      <Name>Native.Sdk.Extension</Name>
     </ProjectReference>
     <ProjectReference Include="..\UI\UI.csproj">
       <Project>{9b25746e-2720-4f5c-9359-0a7397e3eb2e}</Project>

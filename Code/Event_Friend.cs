@@ -1,5 +1,5 @@
-﻿using Native.Csharp.Sdk.Cqp.EventArgs;
-using Native.Csharp.Sdk.Cqp.Interface;
+﻿using Native.Sdk.Cqp.EventArgs;
+using Native.Sdk.Cqp.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace Code
         public void FriendAddRequest(object sender, CQFriendAddRequestEventArgs e)
         {
             if (Common.IsRunning == false) { return; }
-            e.CQApi.SetFriendAddRequest(e.ResponseFlag, Native.Csharp.Sdk.Cqp.Enum.CQResponseType.PASS);
+            e.CQApi.SetFriendAddRequest(e.Request, Native.Sdk.Cqp.Enum.CQResponseType.PASS);
         }
     }
 }

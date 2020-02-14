@@ -1,4 +1,4 @@
-﻿using Native.Csharp.Sdk.Cqp.Model;
+﻿using Native.Sdk.Cqp.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,9 +11,9 @@ namespace Code.Action
     {
         public static string ReceiveRecordAsAMR(QQMessage message)
         {
-            if (message.CQCodes.Any(a => a.Function == Native.Csharp.Sdk.Cqp.Enum.CQFunction.Record)) 
+            if (message.CQCodes.Any(a => a.Function == Native.Sdk.Cqp.Enum.CQFunction.Record)) 
             {
-                return message.ReceiveRecord(Native.Csharp.Sdk.Cqp.Enum.CQAudioFormat.AMR_NB);
+                return message.ReceiveRecord(Native.Sdk.Cqp.Enum.CQAudioFormat.AMR_NB);
             }
             return string.Empty;
         }

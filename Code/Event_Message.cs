@@ -9,10 +9,10 @@ using System.Windows.Data;
 using Code.Action;
 using Code.Helper;
 using Code.Request;
-using Native.Csharp.Sdk.Cqp;
-using Native.Csharp.Sdk.Cqp.EventArgs;
-using Native.Csharp.Sdk.Cqp.Interface;
-using Native.Csharp.Sdk.Extension;
+using Native.Sdk.Cqp;
+using Native.Sdk.Cqp.EventArgs;
+using Native.Sdk.Cqp.Interface;
+using Native.Sdk.Extension;
 using UI.Model;
 
 namespace Code
@@ -27,7 +27,7 @@ namespace Code
         {
             Common.CoolQWebSocket.CQPrivateMessageEventArgs(sender, e);
 
-            if (e.SubType == Native.Csharp.Sdk.Cqp.Enum.CQPrviateMessageType.Friend)
+            if (e.SubType == Native.Sdk.Cqp.Enum.CQPrviateMessageType.Friend)
             {
                 if (e.Message.Text.Contains("/重启"))
                 {
@@ -57,7 +57,7 @@ namespace Code
             }
 
             ///2020-01-08 下载语音失败
-            if (e.Message.CQCodes.Any(a => a.Function == Native.Csharp.Sdk.Cqp.Enum.CQFunction.Record))
+            if (e.Message.CQCodes.Any(a => a.Function == Native.Sdk.Cqp.Enum.CQFunction.Record))
             {
                 //下载消息中的语音
                 e.CQLog.Debug("下载语音", ReceiveRecord.ReceiveRecordAsAMR(e.Message) ?? "下载失败");
@@ -95,7 +95,7 @@ namespace Code
             Issue(e);
 
             //判断收到的消息中是否有被艾特
-            if (e.Message.CQCodes.Any(a => a.Function == Native.Csharp.Sdk.Cqp.Enum.CQFunction.At && a.Items["qq"] == e.CQApi.GetLoginQQ().Id.ToString()) == false) { return; }
+            if (e.Message.CQCodes.Any(a => a.Function == Native.Sdk.Cqp.Enum.CQFunction.At && a.Items["qq"] == e.CQApi.GetLoginQQ().Id.ToString()) == false) { return; }
 
             //价值100亿AI的核心
             if (e.Message.Text.Contains("?") || e.Message.Text.Contains("？"))

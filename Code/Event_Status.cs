@@ -1,6 +1,6 @@
-﻿using Native.Csharp.Sdk.Cqp.EventArgs;
-using Native.Csharp.Sdk.Cqp.Interface;
-using Native.Csharp.Sdk.Cqp.Model;
+﻿using Native.Sdk.Cqp.EventArgs;
+using Native.Sdk.Cqp.Interface;
+using Native.Sdk.Cqp.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +23,7 @@ namespace Code
 
             return new CQFloatWindow()
             {
-                TextColor = Native.Csharp.Sdk.Cqp.Enum.CQFloatWindowColors.Green,
+                TextColor = Native.Sdk.Cqp.Enum.CQFloatWindowColors.Green,
                 Unit = "人",
                 Value = Common.NewFriends
             };

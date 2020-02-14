@@ -1,4 +1,4 @@
-﻿using Native.Csharp.Tool.IniConfig.Linq;
+﻿using Native.Tool.IniConfig.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -23,8 +23,10 @@ namespace UI
                     IniSection LastPreSendSection;
                     IniValue MessageValue;
                     IniValue GroupIdValue;
-                    if (iObject.TryGetValue("LastPreSend", out LastPreSendSection))
+
+                    if (iObject.Any(a => a.ContainsKey("LastPreSend")))
                     {
+                        LastPreSendSection = iObject["LastPreSend"];
                         if (LastPreSendSection.TryGetValue("Message", out MessageValue))
                         {
                             ViewModel.MainInstance.ReadyToSend = MessageValue.Value;
@@ -60,7 +62,7 @@ namespace UI
             LastPreSendSection.Add("Message", MessageValue);
             LastPreSendSection.Add("GroupId", GroupIdValue);
 
-            if (iObject.ContainsKey("LastPreSend"))
+            if (iObject.Any(a => a.ContainsKey("LastPreSend")))
             {
                 if (iObject["LastPreSend"].ContainsKey("Message"))
                 {

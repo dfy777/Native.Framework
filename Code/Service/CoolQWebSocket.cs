@@ -1,6 +1,6 @@
 ﻿using Fleck;
-using Native.Csharp.Sdk.Cqp;
-using Native.Csharp.Sdk.Cqp.EventArgs;
+using Native.Sdk.Cqp;
+using Native.Sdk.Cqp.EventArgs;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;

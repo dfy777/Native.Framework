@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Unity;
-using Native.Csharp.Sdk.Cqp.Interface;
+using Native.Sdk.Cqp.Interface;
 using Code;
 
 namespace Native.Core

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Native.Csharp.Sdk")]
-[assembly: AssemblyCopyright("Copyright © Jie2GG 2018 . GitHub: https://github.com/Jie2GG/Native")]
+[assembly: AssemblyCopyright("Copyright © Jie2GG 2018-2020 . GitHub: https://github.com/Jie2GG/Native")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // 可以指定所有值，也可以使用以下所示的 "*" 预置版本号和修订号
 //通过使用 "*"，如下所示:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion ("4.0.0.0105")]
-[assembly: AssemblyFileVersion ("4.0.0.0105")]
+[assembly: AssemblyVersion ("4.1.0.0211")]
+[assembly: AssemblyFileVersion ("4.1.0.0211")]

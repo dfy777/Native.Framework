@@ -5,12 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Collections.ObjectModel;
-using Native.Csharp.Sdk.Cqp.EventArgs;
+using Native.Sdk.Cqp.EventArgs;
 using System.Windows;
 using PropertyChanged;
 using System.Windows.Data;
 using GalaSoft.MvvmLight.Command;
-using Native.Csharp.Sdk.Cqp;
+using Native.Sdk.Cqp;
 using UI.Model;
 
 namespace UI.Data

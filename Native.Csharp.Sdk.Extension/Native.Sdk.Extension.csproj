@@ -7,8 +7,8 @@
     <ProjectGuid>{640DBD0F-8411-4587-A743-0A2B653F5891}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Native.Csharp.Sdk.Extension</RootNamespace>
-    <AssemblyName>Native.Csharp.Sdk.Extension</AssemblyName>
+    <RootNamespace>Native.Sdk.Extension</RootNamespace>
+    <AssemblyName>Native.Sdk.Extension</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,11 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Native.Csharp.Sdk, Version=2.7.11.121, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\Native.Csharp.Sdk.2.7.11.121\lib\net45\Native.Csharp.Sdk.dll</HintPath>
+    <Reference Include="Native.Sdk, Version=2.8.0.211, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Native.Sdk.2.8.0.211\lib\net45\Native.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Native.Tool, Version=3.1.0.211, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\Native.Tool.3.1.0.211\lib\net45\Native.Tool.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />

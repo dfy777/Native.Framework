@@ -1,4 +1,4 @@
-﻿using Native.Csharp.Sdk.Cqp;
+﻿using Native.Sdk.Cqp;
 using RestSharp;
 using System;
 using System.Collections.Generic;

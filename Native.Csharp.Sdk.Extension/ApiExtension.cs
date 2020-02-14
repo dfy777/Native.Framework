@@ -1,6 +1,6 @@
-﻿using Native.Csharp.Sdk.Cqp;
-using Native.Csharp.Sdk.Cqp.EventArgs;
-using Native.Csharp.Sdk.Cqp.Model;
+﻿using Native.Sdk.Cqp;
+using Native.Sdk.Cqp.EventArgs;
+using Native.Sdk.Cqp.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Native.Csharp.Sdk.Extension
+namespace Native.Sdk.Extension
 {
     public static class ApiExtension
     {

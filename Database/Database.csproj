@@ -31,8 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Native.Csharp.Tool, Version=3.0.8.106, Culture=neutral, processorArchitecture=x86">
-      <HintPath>..\packages\Native.Csharp.Tool.3.0.8.106\lib\net45\Native.Csharp.Tool.dll</HintPath>
+    <Reference Include="Native.Tool, Version=3.1.0.211, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\Native.Tool.3.1.0.211\lib\net45\Native.Tool.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -1,6 +1,6 @@
-﻿using Native.Csharp.Sdk.Cqp;
-using Native.Csharp.Sdk.Cqp.EventArgs;
-using Native.Csharp.Tool.IniConfig.Linq;
+﻿using Native.Sdk.Cqp;
+using Native.Sdk.Cqp.EventArgs;
+using Native.Tool.IniConfig.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;

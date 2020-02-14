@@ -1,6 +1,6 @@
-﻿using Native.Csharp.Sdk.Cqp;
-using Native.Csharp.Sdk.Cqp.EventArgs;
-using Native.Csharp.Sdk.Cqp.Interface;
+﻿using Native.Sdk.Cqp;
+using Native.Sdk.Cqp.EventArgs;
+using Native.Sdk.Cqp.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace Code
     {
         public void GroupAddRequest(object sender, CQGroupAddRequestEventArgs e)
         {
-            if (e.SubType == Native.Csharp.Sdk.Cqp.Enum.CQGroupAddRequestType.RobotBeInviteAddGroup)
+            if (e.SubType == Native.Sdk.Cqp.Enum.CQGroupAddRequestType.RobotBeInviteAddGroup)
             {
                 e.CQLog.Debug("进群申请", $"机器人被邀请进群 {e.FromGroup?.Id ?? -1}");
             }
@@ -25,20 +25,20 @@ namespace Code
             ///QQ等级达1个太阳
             if (Common.VipInfo.GetVipInfo(e.FromQQ.Id).QqLevel >= 16)
             {
-                e.CQApi.SetGroupAddRequest(e.ResponseFlag, Native.Csharp.Sdk.Cqp.Enum.CQGroupAddRequestType.ApplyAddGroup, Native.Csharp.Sdk.Cqp.Enum.CQResponseType.PASS, "");
+                e.CQApi.SetGroupAddRequest(e.Request, Native.Sdk.Cqp.Enum.CQGroupAddRequestType.ApplyAddGroup, Native.Sdk.Cqp.Enum.CQResponseType.PASS, "");
             }
 
             //是会员
             if (Common.VipInfo.GetVipInfo(e.FromQQ.Id).VipLevel != "普通用户")
             {
-                e.CQApi.SetGroupAddRequest(e.ResponseFlag, Native.Csharp.Sdk.Cqp.Enum.CQGroupAddRequestType.ApplyAddGroup, Native.Csharp.Sdk.Cqp.Enum.CQResponseType.PASS, "$$$");
+                e.CQApi.SetGroupAddRequest(e.Request, Native.Sdk.Cqp.Enum.CQGroupAddRequestType.ApplyAddGroup, Native.Sdk.Cqp.Enum.CQResponseType.PASS, "$$$");
             }
 
         }
 
         public void GroupBanSpeak(object sender, CQGroupBanSpeakEventArgs e)
         {
-            if (e.SubType == Native.Csharp.Sdk.Cqp.Enum.CQGroupBanSpeakType.SetBanSpeak)
+            if (e.SubType == Native.Sdk.Cqp.Enum.CQGroupBanSpeakType.SetBanSpeak)
             {
                 e.CQLog.Debug("群禁言", $"{e.FromQQ?.Id ?? -1} 禁言了 {e.BeingOperateQQ?.Id ?? -1} 在群 {e.FromGroup?.Id ?? -1}");
             }
@@ -50,7 +50,7 @@ namespace Code
 
         public void GroupManageChange(object sender, CQGroupManageChangeEventArgs e)
         {
-            if (e.SubType == Native.Csharp.Sdk.Cqp.Enum.CQGroupManageChangeType.SetManage)
+            if (e.SubType == Native.Sdk.Cqp.Enum.CQGroupManageChangeType.SetManage)
             {
                 e.CQLog.Debug("群管理", $"{e.BeingOperateQQ?.Id ?? -1} 成为管理员 在群{e.FromGroup?.Id ?? -1}");
             }
@@ -62,7 +62,7 @@ namespace Code
 
         public void GroupMemberDecrease(object sender, CQGroupMemberDecreaseEventArgs e)
         {
-            if (e.SubType == Native.Csharp.Sdk.Cqp.Enum.CQGroupMemberDecreaseType.RemoveGroup)
+            if (e.SubType == Native.Sdk.Cqp.Enum.CQGroupMemberDecreaseType.RemoveGroup)
             {
                 e.CQLog.Debug("踢出群", $"{e.FromQQ?.Id ?? -1} 把 {e.BeingOperateQQ?.Id ?? -1} 踢出了群 {e.FromGroup?.Id ?? -1}");
             }
@@ -74,7 +74,7 @@ namespace Code
 
         public void GroupMemberIncrease(object sender, CQGroupMemberIncreaseEventArgs e)
         {
-            if (e.SubType == Native.Csharp.Sdk.Cqp.Enum.CQGroupMemberIncreaseType.Invite)
+            if (e.SubType == Native.Sdk.Cqp.Enum.CQGroupMemberIncreaseType.Invite)
             {
                 e.CQLog.Debug("邀请进群", $"{e.FromQQ?.Id ?? -1} 邀请 {e.BeingOperateQQ?.Id ?? -1} 加入了群 {e.FromGroup?.Id ?? -1}.");
             }
