@@ -1,0 +1,18 @@
+﻿using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using com.dfy.demo.Code;
+
+namespace UnitTestProject1
+{
+    [TestClass]
+    public class SimulatorTest
+    {
+        [TestMethod]
+        public void Simulator_Print_OK()
+        {
+            Simulator simulator = new Simulator();
+            simulator.PrintArr();
+
+        }
+    }
+}
