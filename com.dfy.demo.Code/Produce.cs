@@ -87,7 +87,7 @@ namespace com.dfy.demo.Code
             }
             
 
-            //sss
+            
             for(int i = 0; i < produce_num; i++)
             {
                 int star_num;
