@@ -86,6 +86,8 @@ namespace com.dfy.demo.Code
                 throw new ArgumentException("非法资源数目");
             }
             
+
+            //sss
             for(int i = 0; i < produce_num; i++)
             {
                 int star_num;
