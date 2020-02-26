@@ -197,7 +197,7 @@ namespace com.dfy.demo.Code
             {
                 
             }
-
+            ///dsd
             return new ArrayList();
         }
 
@@ -475,6 +475,28 @@ namespace com.dfy.demo.Code
             else if (sum >= 18000 && sum < 20000) { mg_mul *= 0.8; }
             else if (sum >= 17000 && sum < 18000) { mg_mul *= 1; }
             else { mg_mul *= 0.8; }
+        }
+
+        /// <summary>
+        /// 创建人形信息对象
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="possibility"></param>
+        /// <param name="tdoll_type"></param>
+        /// <returns></returns>
+        public GFLElements CreateTdollInfo(int index, double possibility,
+                                         string tdoll_type, int starnum)
+        {
+            if (tdoll_type.Equals("Hg")) { possibility *= hg_mul; }
+            else if (tdoll_type.Equals("Ar")) { possibility *= ar_mul; }
+            else if (tdoll_type.Equals("Rf")) { possibility *= rf_mul; }
+            else if (tdoll_type.Equals("Sg")) { possibility *= sg_mul; }
+            else if (tdoll_type.Equals("Mg")) { possibility *= mg_mul; }
+            else { possibility *= smg_mul; }
+
+            string name = gflelementinfo.IndexToName(index);
+
+            return new GFLElements(index, possibility, starnum, name);
         }
     }
 }

@@ -345,5 +345,15 @@ namespace com.dfy.demo.Code
                 Console.WriteLine(i);
             }
         }
+
+        public string IndexToName(int index)
+        {
+            return (string)withvoid_list[index];
+        }
+
+        public int NameToIndex(string name)
+        {
+            return withvoid_list.IndexOf(name);
+        }
     }
 }

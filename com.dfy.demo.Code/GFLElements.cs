@@ -9,14 +9,34 @@ namespace com.dfy.demo.Code
     /// <summary>
     /// 四种建造模型的基类
     /// </summary>
-    public abstract class GFLElements
+    public class GFLElements
     {
-        /// <summary>
-        /// 确定建造得到的道具的星级数
-        /// </summary>
-        /// <param name="produce_type">建造类型</param>
-        /// <returns>返回星级数</returns>
-        abstract public int make_star(int produce_type);
+        //属性
+        #region
+        string Name { get; set; }
         
+        double Possibility { get; set; }
+
+        int Index { get; set; }
+
+        int Starnum { get; set; }
+        #endregion
+
+        public GFLElements(int _index, double _possibility, int _starnum, string _name)
+        {
+            Name = _name;
+            Possibility = _possibility;
+            Index = _index;
+            Starnum = _starnum;
+        }
+
+        public GFLElements(double _possibility, int _starnum)
+        {
+            //Name = _name;
+            Name = "Equip";
+            Possibility = _possibility;
+            Starnum = _starnum;
+            Index = -1;
+        }
     }
 }
