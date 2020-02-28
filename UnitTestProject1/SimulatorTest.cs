@@ -11,7 +11,7 @@ namespace UnitTestProject1
         public void Simulator_Print_OK()
         {
             Simulator simulator = new Simulator();
-            simulator.PrintArr();
+            simulator.BuildElement(999, 999, 999, 999, 50);
 
         }
     }

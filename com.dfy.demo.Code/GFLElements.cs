@@ -13,21 +13,29 @@ namespace com.dfy.demo.Code
     {
         //属性
         #region
-        string Name { get; set; }
-        
-        double Possibility { get; set; }
+        public string Name { get; set; }
 
-        int Index { get; set; }
+        public double Possibility { get; set; }
 
-        int Starnum { get; set; }
+        public int Index { get; set; }
+
+        public int Starnum { get; set; }
+
+        public string PType { get; set; }
         #endregion
 
-        public GFLElements(int _index, double _possibility, int _starnum, string _name)
+        public GFLElements()
+        {
+
+        }
+
+        public GFLElements(int _index, double _possibility, int _starnum, string _name, string _type)
         {
             Name = _name;
             Possibility = _possibility;
             Index = _index;
             Starnum = _starnum;
+            PType = _type;
         }
 
         public GFLElements(double _possibility, int _starnum)
@@ -37,6 +45,14 @@ namespace com.dfy.demo.Code
             Possibility = _possibility;
             Starnum = _starnum;
             Index = -1;
+        }
+
+        public override string ToString()
+        {
+            string str1 = "Name: " + Name;
+            string str2 = "Star: " + Starnum;
+            string str3 = "type: " + PType; 
+            return $"{str1, -50}{str2, -50}{str3}";
         }
     }
 }
