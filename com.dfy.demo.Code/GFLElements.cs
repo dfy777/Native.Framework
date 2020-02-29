@@ -11,8 +11,11 @@ namespace com.dfy.demo.Code
     /// </summary>
     public class GFLElements
     {
-        //属性
-        #region
+        #region --字段--
+        int FORMAT_INT = -30;
+        #endregion
+
+        #region --属性--
         public string Name { get; set; }
 
         public double Possibility { get; set; }
@@ -52,7 +55,7 @@ namespace com.dfy.demo.Code
             string str1 = "Name: " + Name;
             string str2 = "Star: " + Starnum;
             string str3 = "type: " + PType; 
-            return $"{str1, -50}{str2, -50}{str3}";
+            return $"{str1, -35}{str2, -30}{str3}";
         }
     }
 }

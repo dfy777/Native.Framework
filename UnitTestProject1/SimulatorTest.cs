@@ -8,7 +8,7 @@ namespace UnitTestProject1
     public class SimulatorTest
     {
         [TestMethod]
-        public void Simulator_Print_OK()
+        public void Simulator_BuilElement_OK()
         {
             Simulator simulator = new Simulator();
             simulator.BuildElement(999, 999, 999, 999, 50);

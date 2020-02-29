@@ -17,11 +17,11 @@ namespace com.dfy.demo.Code
             produce = new Produce();
         }
 
-        public void BuildElement(int manpower, int ammo, int ration, 
+        public List<string> BuildElement(int manpower, int ammo, int ration, 
                                  int parts, int produce_num)
         {
             produce.SetResources(manpower, ammo, ration, parts);
-            produce.BeginToProduce(1, produce_num);
+            return produce.BeginToProduce(1, produce_num);
         }
     }
 }
