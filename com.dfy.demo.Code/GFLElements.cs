@@ -27,6 +27,8 @@ namespace com.dfy.demo.Code
         public string PType { get; set; }
         #endregion
 
+
+        #region --构造函数
         public GFLElements()
         {
 
@@ -49,7 +51,10 @@ namespace com.dfy.demo.Code
             Starnum = _starnum;
             Index = -1;
         }
+        #endregion
 
+
+        #region --公有方法--
         public override string ToString()
         {
             string str1 = "Name: " + Name;
@@ -57,5 +62,7 @@ namespace com.dfy.demo.Code
             string str3 = "type: " + PType; 
             return $"{str1, -35}{str2, -30}{str3}";
         }
+        #endregion
+
     }
 }

@@ -60,9 +60,11 @@ namespace com.dfy.demo.Code
             set { parts = value; }
         }
 
-            
+
         #endregion
 
+
+        #region --构造方法--
         /// <summary>
         /// 构造函数
         /// 初始化可建造元素信息
@@ -71,6 +73,10 @@ namespace com.dfy.demo.Code
         {
             gflelementinfo = new GFLElementsInfo();
         }
+        #endregion
+
+
+        #region --公有方法--
 
         /// <summary>
         /// 该函数为建造算法的入口
@@ -146,6 +152,11 @@ namespace com.dfy.demo.Code
             Ration = rw;
             Parts = pw;
         }
+
+        #endregion
+
+
+        #region --私有方法--
 
         /// <summary>
         /// 计算资源的总和
@@ -862,5 +873,7 @@ namespace com.dfy.demo.Code
 
             return new GFLElements(index, possibility, starnum, name, "SMG");
         }
+
+        #endregion
     }
 }
