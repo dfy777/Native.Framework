@@ -13,6 +13,13 @@ namespace UnitTestProject1
             Simulator simulator = new Simulator();
             simulator.BuildElement(999, 999, 999, 999, 50);
         }
+
+        [TestMethod]
+        public void CombineAvator_OK()
+        {
+            CombineGraph cg = new CombineGraph();
+            cg.CombineAvator();
+        }
     }
 
     
