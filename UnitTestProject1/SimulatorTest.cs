@@ -17,8 +17,7 @@ namespace UnitTestProject1
         [TestMethod]
         public void CombineAvator_OK()
         {
-            CombineGraph cg = new CombineGraph();
-            cg.CombineAvator();
+            
         }
     }
 

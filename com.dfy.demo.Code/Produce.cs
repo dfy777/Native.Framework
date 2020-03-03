@@ -87,7 +87,7 @@ namespace com.dfy.demo.Code
         /// 3--普通装备建造
         /// 4--重型装备建造</param>
         /// <param name="produce_num">建造次数</param>
-        public List<string> BeginToProduce(int produce_type, int produce_num)
+        public List<GFLElements> BeginToProduce(int produce_type, int produce_num)
         {
             if (ErrorDetection_type(produce_type))
             {
@@ -103,7 +103,7 @@ namespace com.dfy.demo.Code
             
             int star_num;
             List<GFLElements> str_info = new List<GFLElements>();
-            List<string> result_str = new List<string>();
+            //List<string> result_str = new List<string>();
 
             for (int i = 0; i <= produce_num; i++)
             {
@@ -130,12 +130,12 @@ namespace com.dfy.demo.Code
                 }
             }
 
-            for (int i = 0; i < str_info.Count(); i++)
-            {
-                result_str.Add(str_info[i].ToString());
-                //Console.WriteLine(str_info[i].ToString());
-            }
-            return result_str;
+            //for (int i = 0; i < str_info.Count(); i++)
+            //{
+            //    result_str.Add(str_info[i].ToString());
+            //    //Console.WriteLine(str_info[i].ToString());
+            //}
+            return str_info;
         }
 
         /// <summary>

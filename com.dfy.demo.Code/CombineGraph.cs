@@ -13,29 +13,42 @@ namespace com.dfy.demo.Code
         #region --字段--
 
         private const string folder = @"C:\Projects\avator\";
+        private const string des_folder = @"C:\tools\CQP-xiaoi\酷Q Pro\data\image\";
         private const int width = 100;
         private const int height = 100;
+        private const int PRODUCE_NUM = 10;
 
         #endregion
 
+
+        #region --属性--
+
+        int[] Avator { get; set; }
+
+        #endregion
+
+
         #region --构造函数--
 
-        public CombineGraph()
+        public CombineGraph(int [] _avator)
         {
-
+            Avator = _avator;
         }
 
         #endregion
 
+
+        #region --公有方法--
+
         public void CombineAvator()
         {
-            int[] avator = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            //int[] avator = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
             List<Image> image = new List<Image>();
             List<Bitmap> bitmap = new List<Bitmap>();
 
-            for(int i = 0; i < avator.Length; i++)
+            for(int i = 0; i < Avator.Length; i++)
             {
-                string str = avator[i].ToString();
+                string str = Avator[i].ToString();
                 str = folder + str + ".png";
 
                 image.Add(Image.FromFile(str));
@@ -52,7 +65,7 @@ namespace com.dfy.demo.Code
             int ptx = 0;
             int pty = 0;
         
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < PRODUCE_NUM/2; i++)
             {
                 g1.DrawImage(bitmap[i], ptx, pty, width, height);
                 ptx = ptx + width + 5;
@@ -61,17 +74,18 @@ namespace com.dfy.demo.Code
             pty = pty + height + 5;
             ptx = 0;
 
-            for (int i = 5; i < 10; i++)
+            for (int i = PRODUCE_NUM/2; i < PRODUCE_NUM; i++)
             {
                 g1.DrawImage(bitmap[i], ptx, pty, width, height);
                 ptx = ptx + width + 5;
             }
 
-            string str1 = folder + "new.png";
+            string des_str = des_folder + "new.png";
 
             Image img = new_bitmap;
-            img.Save(str1);
-            img.Dispose();
+            img.Save(des_str);
         }
+
+        #endregion
     }
 }

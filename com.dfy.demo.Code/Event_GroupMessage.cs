@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Native.Sdk.Cqp.EventArgs;
 using Native.Sdk.Cqp.Interface;
 using Native.Sdk.Cqp.Model;
+using Native.Sdk.Cqp;
 
 namespace com.dfy.demo.Code.Event_me
 {
@@ -20,6 +21,7 @@ namespace com.dfy.demo.Code.Event_me
 
         private Simulator simulator;
         private int BUILD_NUM = 10;
+        private List<GFLElements> gflelements_list;
 
         #endregion
 
@@ -50,9 +52,21 @@ namespace com.dfy.demo.Code.Event_me
             {
                 try
                 {
-                    string[] order = e.Message.Text.Split();
-                    //e.FromGroup.SendGroupMessage(cqat, order[0], order[1]);
-                    e.FromGroup.SendGroupMessage(cqat, Action_MakeTdoll(e.Message));
+                    gflelements_list = Action_MakeTdoll(e.Message);
+
+                    int[] index_list = new int[BUILD_NUM];
+                    for(int i = 0; i < BUILD_NUM; i++)
+                    {
+                        index_list[i] = gflelements_list[i].Index;
+                    }
+
+                    CombineGraph cg = new CombineGraph(index_list);
+                    cg.CombineAvator();
+
+
+                    CQCode cqimg = CQApi.CQCode_Image("new.png");
+
+                    e.FromGroup.SendGroupMessage(cqat, cqimg);
                 }
                 catch (Exception)
                 {
@@ -61,7 +75,8 @@ namespace com.dfy.demo.Code.Event_me
             }
             else
             {
-                e.FromGroup.SendGroupMessage(cqat, e.Message.Text, e.Message);
+                //e.FromGroup.SendGroupMessage(cqat, e.Message.Text, e.Message);
+                return;
             }
 
             e.Handler = true;  
@@ -77,19 +92,18 @@ namespace com.dfy.demo.Code.Event_me
         /// </summary>
         /// <param name="receive_msg">输入的指令</param>
         /// <returns>表示建造结果的字符串</returns>
-        private QQMessage Action_MakeTdoll(QQMessage receive_msg)
+        private List<GFLElements> Action_MakeTdoll(QQMessage receive_msg)
         {
             //Simulator simulator = new Simulator();
 
             string[] order = receive_msg.Text.Split();
-            string toprint = "\n";
+            List<GFLElements> tdoll_info;
 
             if (order.Length == 2)  // 输入的指令为建造公式
             {
                 try
                 {
                     string formula = order[1];
-                    List<string> tdoll_info = new List<string>();
                     List<int> resources = Tdoll_FormulaDistinguish(formula);
 
                     if (resources.Count == 4)
@@ -99,11 +113,6 @@ namespace com.dfy.demo.Code.Event_me
                     else
                     {
                         throw new ArgumentException("建造公式错误");
-                    }
-
-                    foreach (string item in tdoll_info)
-                    {
-                        toprint += item + '\n';
                     }
                 }
                 catch(FormatException e1)
@@ -119,13 +128,8 @@ namespace com.dfy.demo.Code.Event_me
             {
                 try
                 {
-                    List<string> tdoll_info = this.simulator.BuildElement(int.Parse(order[1]),int.Parse(order[2]), 
+                    tdoll_info = this.simulator.BuildElement(int.Parse(order[1]),int.Parse(order[2]), 
                                                                             int.Parse(order[3]), int.Parse(order[4]), BUILD_NUM);
-
-                    foreach(string item in tdoll_info)
-                    {
-                        toprint += item + '\n';
-                    }
                 }
                 catch(FormatException e1)
                 {
@@ -141,7 +145,7 @@ namespace com.dfy.demo.Code.Event_me
                 throw new ArrayTypeMismatchException("建造指令形式错误");
             }
 
-            return new QQMessage(receive_msg.CQApi, receive_msg.Id, toprint); 
+            return tdoll_info; 
         }
 
         /// <summary>

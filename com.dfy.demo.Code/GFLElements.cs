@@ -57,10 +57,12 @@ namespace com.dfy.demo.Code
         #region --公有方法--
         public override string ToString()
         {
+            string str = Index.ToString();
             string str1 = "Name: " + Name;
             string str2 = "Star: " + Starnum;
-            string str3 = "type: " + PType; 
-            return $"{str1, -35}{str2, -30}{str3}";
+            string str3 = "type: " + PType;
+            //return $"{str} {str1} {str2} {str3}";
+            return $"{str}";
         }
         #endregion
 

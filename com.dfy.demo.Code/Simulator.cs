@@ -34,7 +34,7 @@ namespace com.dfy.demo.Code
         /// <param name="parts">零件</param>
         /// <param name="produce_num">建造次数</param>
         /// <returns>建造得到的人形的数据列表</returns>
-        public List<string> BuildElement(int manpower, int ammo, int ration, 
+        public List<GFLElements> BuildElement(int manpower, int ammo, int ration, 
                                  int parts, int produce_num)
         {
             try
@@ -54,7 +54,7 @@ namespace com.dfy.demo.Code
         /// <param name="resources">建造资源列表</param>
         /// <param name="produce_num">建造次数</param>
         /// <returns>建造得到的人形的数据列表</returns>
-        public List<string> BuildElement(List<int> resources, int produce_num)
+        public List<GFLElements> BuildElement(List<int> resources, int produce_num)
         {
             try
             {
